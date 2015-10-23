@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Chat</title>
+        <meta charset="utf8">
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+        <script src="app.js"></script>
+        <script src="controllers.js"></script>
+        <script src="services.js"></script>
+
+        <style type="text/css">
+            #login {
+                width: 600px;
+                margin: 0 auto;
+            }
+        </style>
+    </head>
+    <body ng-app="MyApp" ng-controller="Main">
+
+        <section id="login" ng-if="!logueado">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    LOGIN
+                </div>
+                <div class="panel-body">
+                    <form name="loginForm" data-ng-submit="log();">
+                        <input ng-model="user" name="user" class="form-control" type="text">
+                        <input ng-model="pass" name="pass" class="form-control" type="password">
+                        <input class="btn btn-default" type="submit" value="Login">
+                    </form>
+
+                    <p ng-if="error">USUARIO O CONTRASEÑA ICONRRECTA</p>
+                    <p ng-show="error">USUARIO O CONTRASEÑA ICONRRECTA</p>
+                    <p ng-if="sending">ENVIANDO...</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="lobby" ng-if="logueado">
+            LOGUEADO CORRECTAMENTE!
+        </section>
+
+    </body>
+<html>
