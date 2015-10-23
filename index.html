@@ -25,8 +25,8 @@
                 </div>
                 <div class="panel-body">
                     <form name="loginForm" data-ng-submit="log();">
-                        <input ng-model="user" name="user" class="form-control" type="text">
-                        <input ng-model="pass" name="pass" class="form-control" type="password">
+                        <input ng-model="cred.user" class="form-control" type="text">
+                        <input ng-model="cred.pass" class="form-control" type="password">
                         <input class="btn btn-default" type="submit" value="Login">
                     </form>
 
@@ -37,7 +37,7 @@
             </div>
         </section>
 
-        <section id="lobby" ng-if="logueado">
+        <section id="lobby" ng-if="logueado" ng-controller="LobbyController">
             LOGUEADO CORRECTAMENTE!
         </section>
 

@@ -5,13 +5,13 @@ App.controller('Main', function($scope, $http, Auth){
     $scope.logueado = false;
     $scope.sending = false;
     $scope.error = false;
+    $scope.cred = {};
 
     $scope.log = function(){
-
         $scope.sending = true;
         $scope.error = false;
 
-        var promise = Auth.conectar($scope.user, $scope.pass);
+        var promise = Auth.conectar($scope.cred.user, $scope.cred.pass);
         promise.then(function(ok){
             $scope.logueado = true;
         }, function(){
@@ -61,6 +61,6 @@ App.service('Auth', function($http, $q){
 
 
 
-angular.controller('LobbyController', function(){
+App.controller('LobbyController', function(){
     alert('HOILA!');
 });
